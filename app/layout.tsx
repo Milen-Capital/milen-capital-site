@@ -15,6 +15,7 @@ import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://milencapital.com"),
   title: `${SITE.name} — ${SITE.tagline}`,
   description:
     "Seguros GNP con asesoría personalizada. Protege lo que más importa con el respaldo de una agente autorizada y el acompañamiento de Milen Capital.",
