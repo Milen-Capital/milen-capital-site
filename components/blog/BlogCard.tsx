@@ -1,16 +1,9 @@
 import Link from "next/link";
 import { BLOG_TEASER } from "@/content/site";
 import type { DisplayPost } from "@/lib/blog";
+import { formatDate } from "@/lib/formatDate";
 import { TOPIC_ICONS } from "@/components/icons";
 import FallbackImage from "@/components/FallbackImage";
-
-function formatDate(date: string) {
-  return new Date(`${date}T00:00:00`).toLocaleDateString("es-MX", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
 
 export default function BlogCard({ post }: { post: DisplayPost }) {
   const category = BLOG_TEASER.topics.find((topic) => topic.id === post.categoryId);

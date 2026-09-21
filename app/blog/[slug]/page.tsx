@@ -3,16 +3,9 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import { BLOG_PAGE, BLOG_TEASER, CONTACT } from "@/content/site";
 import { getBlogPostBySlug } from "@/lib/blog";
+import { formatDate } from "@/lib/formatDate";
 import { TOPIC_ICONS } from "@/components/icons";
 import FallbackImage from "@/components/FallbackImage";
-
-function formatDate(date: string) {
-  return new Date(`${date}T00:00:00`).toLocaleDateString("es-MX", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
