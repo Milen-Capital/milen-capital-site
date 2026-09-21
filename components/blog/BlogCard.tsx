@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BLOG_TEASER, type BlogPost } from "@/content/site";
+import { BLOG_TEASER } from "@/content/site";
+import type { DisplayPost } from "@/lib/blog";
 import { TOPIC_ICONS } from "@/components/icons";
 import FallbackImage from "@/components/FallbackImage";
 
@@ -11,7 +12,7 @@ function formatDate(date: string) {
   });
 }
 
-export default function BlogCard({ post }: { post: BlogPost }) {
+export default function BlogCard({ post }: { post: DisplayPost }) {
   const category = BLOG_TEASER.topics.find((topic) => topic.id === post.categoryId);
   const Icon = category ? TOPIC_ICONS[category.icon] : null;
 

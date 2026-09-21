@@ -1,15 +1,18 @@
 import type { MetadataRoute } from "next";
-import { BLOG_POSTS } from "@/content/site";
+import { getBlogPosts } from "@/lib/blog";
 
 const BASE_URL = "https://milencapital.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = "force-dynamic";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = ["", "/soluciones", "/sobre-nosotros", "/blog", "/contacto"].map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified: new Date(),
   }));
 
-  const postRoutes = BLOG_POSTS.map((post) => ({
+  const posts = await getBlogPosts();
+  const postRoutes = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.date),
   }));

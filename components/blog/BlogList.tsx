@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BLOG_PAGE, BLOG_POSTS, BLOG_TEASER } from "@/content/site";
+import { BLOG_PAGE, BLOG_TEASER } from "@/content/site";
+import type { DisplayPost } from "@/lib/blog";
 import BlogCard from "@/components/blog/BlogCard";
 
 // Móvil muestra 4 por página, el resto (sm en adelante) muestra 6.
@@ -19,15 +20,15 @@ function usePageSize() {
   return pageSize;
 }
 
-export default function BlogList() {
+export default function BlogList({ posts }: { posts: DisplayPost[] }) {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const pageSize = usePageSize();
 
-  const posts = activeCategory ? BLOG_POSTS.filter((post) => post.categoryId === activeCategory) : BLOG_POSTS;
-  const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));
+  const filteredPosts = activeCategory ? posts.filter((post) => post.categoryId === activeCategory) : posts;
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
   const currentPage = Math.min(page, totalPages);
-  const paginatedPosts = posts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const paginatedPosts = filteredPosts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   const handleCategoryChange = (categoryId: string | null) => {
     setActiveCategory(categoryId);

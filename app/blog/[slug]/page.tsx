@@ -1,12 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { BLOG_PAGE, BLOG_POSTS, BLOG_TEASER, CONTACT } from "@/content/site";
+import { PortableText } from "@portabletext/react";
+import { BLOG_PAGE, BLOG_TEASER, CONTACT } from "@/content/site";
+import { getBlogPostBySlug } from "@/lib/blog";
 import { TOPIC_ICONS } from "@/components/icons";
 import FallbackImage from "@/components/FallbackImage";
-
-export function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
-}
 
 function formatDate(date: string) {
   return new Date(`${date}T00:00:00`).toLocaleDateString("es-MX", {
@@ -18,7 +16,7 @@ function formatDate(date: string) {
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = BLOG_POSTS.find((item) => item.slug === slug);
+  const post = await getBlogPostBySlug(slug);
   if (!post) notFound();
 
   const category = BLOG_TEASER.topics.find((topic) => topic.id === post.categoryId);
@@ -28,13 +26,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <article>
       <section className="border-t-2 border-gold-dark bg-white pb-8 pt-10 md:pt-12">
         <div className="container-page max-w-3xl">
-          <div className="flex flex-wrap items-center gap-3">
-            <Link href="/blog" className="text-sm font-medium text-gold-dark hover:text-navy">
-              ← {BLOG_PAGE.backLabel}
-            </Link>
+          <Link href="/blog" className="text-sm font-medium text-gold-dark hover:text-navy">
+            ← {BLOG_PAGE.backLabel}
+          </Link>
 
+          <div className="flex flex-wrap items-center gap-3">
             {category ? (
-              <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-gold-dark">
+              <span className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-gold-dark">
                 {Icon ? <Icon className="h-3.5 w-3.5" /> : null}
                 {category.name}
               </span>
@@ -71,9 +69,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
 
           <div className="mt-8 space-y-5 text-base leading-relaxed text-ink">
-            {post.content.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            {post.portableBody ? (
+              <PortableText value={post.portableBody} />
+            ) : (
+              post.paragraphs?.map((paragraph, index) => <p key={index}>{paragraph}</p>)
+            )}
           </div>
 
           <div className="mt-10 rounded-2xl bg-navy p-8 text-center">
