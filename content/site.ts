@@ -1,8 +1,3 @@
-// Contenido del sitio en español.
-// Todos los textos visibles viven aquí como variables, para poder
-// editarlos en un solo lugar (y, más adelante, reemplazar esta fuente
-// por el contenido que venga del panel de administración).
-
 export const SITE = {
   name: "Milen Capital",
   tagline: "Transformamos éxito en legado",
@@ -29,10 +24,6 @@ export const CONTACT = {
   regionsNote: "Asesoría presencial y en línea.",
 };
 
-// Coordenadas de referencia (centro de ciudad) para el mapa de cobertura.
-// Ajusta "city" cuando se confirme la sede/oficina real en cada estado.
-// Pendiente: las direcciones son ficticias (marcador de posición) —
-// reemplazar por la dirección real de cada oficina cuando se confirme.
 export const COVERAGE_MAP = [
   {
     id: "queretaro",
@@ -408,8 +399,6 @@ export const TEAM = {
       photoCutout: "/team/estefania-cutout.png",
     },
     {
-      // Nota: se asume que "Mike.jpeg" es de Luis Miguel (apodo "Mike").
-      // Confirmar y renombrar el archivo si no es así.
       id: "luis-miguel",
       name: "Luis Miguel",
       role: "Cargo por confirmar",
@@ -423,7 +412,6 @@ export const TEAM = {
 } as const;
 
 // Contenido de la página "Sobre Nosotros" (/sobre-nosotros).
-// Pendiente: revisar la redacción de misión/visión/valores con el cliente.
 export const ABOUT_PAGE = {
   hero: {
     eyebrow: "Sobre nosotros",
@@ -485,7 +473,6 @@ export const ABOUT_PAGE = {
 } as const;
 
 // Pendiente: reemplazar los "Cliente N" con testimonios reales
-// (nombre, foto opcional y cita) cuando se recopilen.
 export const TESTIMONIALS = {
   title: "Lo que dicen nuestros clientes",
   subtitle: "Historias reales de quienes ya confían en nuestro trabajo y construyen un futuro más seguro.",
@@ -591,7 +578,7 @@ export const BLOG_POSTS: BlogPost[] = [
     categoryId: "seguros",
     image: "/blog/seguro-vida.jpg",
     date: "2026-08-12",
-    readTime: "5 min",
+    readTime: "3 min",
     author: "Edith Aguilar",
     content: [
       "Elegir un seguro de vida no debería sentirse como llenar un formulario más. Es una decisión que protege a las personas que más te importan, y por eso vale la pena entender qué estás contratando antes de firmar.",
@@ -608,7 +595,7 @@ export const BLOG_POSTS: BlogPost[] = [
     categoryId: "patrimonio",
     image: "/blog/patrimonio.jpg",
     date: "2026-07-28",
-    readTime: "6 min",
+    readTime: "3 min",
     author: "Edith Aguilar",
     content: [
       "Proteger tu patrimonio no es solo tener seguros, es tener una estrategia. Aquí te compartimos cinco acciones que puedes empezar a aplicar desde hoy.",
@@ -616,92 +603,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Revisa tus pólizas cada año: tu patrimonio cambia, y tus coberturas deben cambiar con él. Planea tu sucesión con anticipación, para que lo que construiste llegue a quien tú decidas.",
       "Por último, rodéate de asesoría profesional. Un especialista te ayuda a identificar riesgos que muchas veces pasan desapercibidos hasta que ya es tarde.",
     ],
-  },
-  {
-    slug: "planeacion-financiera-para-el-retiro",
-    title: "Planeación financiera: cómo empezar a construir tu retiro",
-    excerpt:
-      "Entre más pronto empieces, menos esfuerzo necesitas después. Te contamos cómo dar los primeros pasos hacia un retiro tranquilo.",
-    categoryId: "planeacion-financiera",
-    image: "/blog/retiro.jpg",
-    date: "2026-06-15",
-    readTime: "4 min",
-    author: "Edith Aguilar",
-    content: [
-      "Hablar de retiro a los 30 o 40 años puede sentirse lejano, pero es justo el mejor momento para empezar: el tiempo es el mayor aliado del interés compuesto.",
-      "El primer paso es tener claridad: ¿a qué edad quieres retirarte y con qué nivel de ingresos? A partir de ahí se puede construir un plan de ahorro realista.",
-      "Un plan de ahorro para el retiro con respaldo GNP combina disciplina de ahorro con crecimiento constante, y puede complementar lo que ya construyes con el IMSS o el ISSSTE.",
-      "Empezar con aportaciones pequeñas pero constantes suele generar mejores resultados que esperar a tener \"más disponible\" para empezar.",
-    ],
-  },
-  {
-    slug: "que-cubre-un-seguro-de-gastos-medicos-mayores",
-    title: "¿Qué cubre realmente un seguro de gastos médicos mayores?",
-    excerpt:
-      "Coaseguro, deducible, red de hospitales... te explicamos en palabras simples los términos que debes entender antes de contratar.",
-    categoryId: "seguros",
-    image: "/blog/gastos-medicos.jpg",
-    date: "2026-05-30",
-    readTime: "5 min",
-    author: "Edith Aguilar",
-    content: [
-      "Cuando hablamos de gastos médicos mayores, hay tres palabras que aparecen siempre y que vale la pena entender bien: deducible, coaseguro y red de hospitales.",
-      "El deducible es el monto que pagas de tu bolsillo antes de que la aseguradora empiece a cubrir gastos. El coaseguro es el porcentaje que compartes con la aseguradora una vez superado el deducible.",
-      "La red de hospitales define en qué clínicas puedes atenderte con el respaldo completo de tu póliza; atenderte fuera de la red puede significar gastos adicionales.",
-      "Entender estos tres conceptos te ayuda a comparar pólizas de forma justa y a elegir una cobertura que realmente se ajuste a tu presupuesto y necesidades.",
-    ],
-  },
-  {
-    slug: "seguro-de-auto-que-cobertura-elegir",
-    title: "Seguro de auto: ¿cobertura amplia, limitada o responsabilidad civil?",
-    excerpt:
-      "Elegir la cobertura equivocada puede salir caro. Te explicamos la diferencia entre cada tipo y cuándo conviene cada una.",
-    categoryId: "seguros",
-    image: "/blog/seguro-auto.jpg",
-    date: "2026-05-10",
-    readTime: "4 min",
-    author: "Edith Aguilar",
-    content: [
-      "La responsabilidad civil es la cobertura mínima: cubre los daños que le causas a terceros, pero no protege tu propio vehículo.",
-      "La cobertura limitada agrega protección para tu auto ante robo total o pérdida total por accidente, mientras que la amplia también cubre daños materiales parciales.",
-      "Si tu auto es nuevo o todavía lo estás pagando, una cobertura amplia suele ser la opción más segura. Si es un auto de varios años, la limitada puede ser suficiente.",
-      "Lo importante es revisar el valor comercial de tu auto cada año, ya que la cobertura ideal cambia conforme el vehículo se deprecia.",
-    ],
-  },
-  {
-    slug: "seguro-de-hogar-vale-la-pena",
-    title: "¿Vale la pena un seguro de hogar si ya pagué mi casa?",
-    excerpt:
-      "Terminar de pagar tu casa no elimina los riesgos. Te contamos qué cubre un seguro de hogar y por qué seguir protegido importa.",
-    categoryId: "patrimonio",
-    image: "/blog/seguro-hogar.jpg",
-    date: "2026-04-22",
-    readTime: "4 min",
-    author: "Edith Aguilar",
-    content: [
-      "Terminar de pagar la hipoteca es una gran noticia, pero también es el momento en el que muchas personas cancelan su seguro de hogar sin darse cuenta del riesgo.",
-      "Un seguro de hogar no solo protege la estructura: también cubre el contenido (muebles, aparatos, pertenencias) ante robo, incendio o fenómenos naturales.",
-      "Reconstruir una casa desde cero, o reemplazar lo perdido en un siniestro, casi siempre cuesta más de lo que se imagina, sin importar si la casa ya está pagada.",
-      "Mantener la póliza activa después de liquidar la hipoteca sigue siendo una de las formas más simples de proteger tu patrimonio.",
-    ],
-  },
-  {
-    slug: "cuanto-ahorrar-para-el-retiro",
-    title: "¿Cuánto deberías ahorrar cada mes pensando en tu retiro?",
-    excerpt:
-      "No existe una fórmula única, pero sí puntos de partida claros para calcular cuánto ahorrar según tu edad y tus metas.",
-    categoryId: "planeacion-financiera",
-    image: "/blog/ahorro-retiro.jpg",
-    date: "2026-04-05",
-    readTime: "5 min",
-    author: "Edith Aguilar",
-    content: [
-      "Una regla general es destinar entre el 10% y el 15% de tu ingreso mensual al ahorro para el retiro, aunque el número ideal depende de a qué edad empieces.",
-      "Entre más joven empieces, menor porcentaje necesitas destinar cada mes, porque el tiempo hace que el crecimiento se acumule a tu favor.",
-      "Si empiezas más tarde, no significa que sea tarde: simplemente conviene ajustar el porcentaje de ahorro o buscar instrumentos con mejor rendimiento.",
-      "Lo más importante es automatizar el ahorro, para que no dependa de la disciplina del día a día sino de un hábito ya establecido.",
-    ],
-  },
+  }
 ];
 
 export const CONTACT_TEASER = {
