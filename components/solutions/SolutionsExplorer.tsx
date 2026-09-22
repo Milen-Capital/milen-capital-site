@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { CONTACT, SOLUTIONS, SOLUTIONS_PAGE, SOLUTION_FORMS } from "@/content/site";
 import { SOLUTION_ICONS } from "@/components/icons";
 import FallbackImage from "@/components/FallbackImage";
@@ -77,7 +78,10 @@ function HelpBox() {
 }
 
 export default function SolutionsExplorer() {
-  const [activeId, setActiveId] = useState<string>(SOLUTIONS.items[0].id);
+  const searchParams = useSearchParams();
+  const requestedId = searchParams.get("seguro");
+  const initialId = SOLUTIONS.items.find((item) => item.id === requestedId)?.id ?? SOLUTIONS.items[0].id;
+  const [activeId, setActiveId] = useState<string>(initialId);
   const [values, setValues] = useState<Record<string, string>>({});
   const [listOpen, setListOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);

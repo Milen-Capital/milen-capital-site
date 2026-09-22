@@ -57,7 +57,7 @@ function SolutionDetailCard({ item, fill = false }: { item: SolutionItem; fill?:
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">{item.detail}</p>
         <Link
-          href={SOLUTIONS.href}
+          href={`${SOLUTIONS.href}?seguro=${item.id}`}
           className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-gold-dark hover:text-cream"
         >
           {SOLUTIONS.ctaLabel}
