@@ -428,13 +428,11 @@ export const ABOUT_PAGE = {
   },
   mission: {
     title: "Misión",
-    text: "Ayudar a empresarios, profesionales y familias a proteger, fortalecer y transferir su patrimonio de manera estratégica para construir un legado duradero.",
-    image: "/about/mision.jpg",
+    text: "Ayudar a empresarios, profesionales y familias a proteger, fortalecer y transferir su patrimonio de manera estratégica para construir un legado duradero."
   },
   vision: {
     title: "Visión",
-    text: "Ser la firma patrimonial de referencia para quienes buscan trascender financieramente y generar impacto positivo en futuras generaciones.",
-    image: "/about/valores.jpg",
+    text: "Ser la firma patrimonial de referencia para quienes buscan trascender financieramente y generar impacto positivo en futuras generaciones."
   },
   values: {
     title: "Valores",
