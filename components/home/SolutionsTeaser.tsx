@@ -39,6 +39,7 @@ function SolutionDetailCard({ item, fill = false }: { item: SolutionItem; fill?:
           src={item.image}
           alt={item.name}
           sizes="(min-width: 768px) 50vw, 100vw"
+          unoptimized
           className="h-full w-full object-cover"
           fallback={
             <div className="flex h-full w-full items-center justify-center bg-navy/5 text-navy">

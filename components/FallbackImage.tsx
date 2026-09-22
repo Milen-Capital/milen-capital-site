@@ -23,6 +23,7 @@ export default function FallbackImage({
   height,
   sizes,
   quality,
+  unoptimized,
 }: {
   src: string;
   alt: string;
@@ -34,6 +35,10 @@ export default function FallbackImage({
   height?: number;
   sizes?: string;
   quality?: number;
+  // Sirve el archivo tal cual, sin pasar por el redimensionado bajo demanda
+  // (útil para imágenes que ya vienen livianas y prearmadas: evita la
+  // espera de esa primera transformación en cada tamaño nuevo).
+  unoptimized?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -63,6 +68,7 @@ export default function FallbackImage({
         fill
         sizes={sizes ?? "100vw"}
         quality={quality}
+        unoptimized={unoptimized}
         className={className}
         onError={() => setFailed(true)}
         onLoad={onLoad}
@@ -79,6 +85,7 @@ export default function FallbackImage({
       height={height ?? 64}
       sizes={sizes}
       quality={quality}
+      unoptimized={unoptimized}
       className={className}
       onError={() => setFailed(true)}
       onLoad={onLoad}

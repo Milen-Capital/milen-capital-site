@@ -100,7 +100,7 @@ export const SOLUTIONS = {
     {
       id: "vida",
       icon: "life",
-      image: "/soluciones/vida.jpg",
+      image: "/soluciones/vida.webp",
       name: "Vida",
       description: "Hoy los proteges, siempre los acompañas.",
       detail:
@@ -109,7 +109,7 @@ export const SOLUTIONS = {
     {
       id: "gastos-medicos",
       icon: "health",
-      image: "/soluciones/medicos.jpg",
+      image: "/soluciones/medicos.webp",
       name: "Gastos Médicos",
       description: "Tu salud y la de tu familia en las mejores manos.",
       detail:
@@ -118,7 +118,7 @@ export const SOLUTIONS = {
     {
       id: "auto",
       icon: "auto",
-      image: "/soluciones/automoviles.jpg",
+      image: "/soluciones/automoviles.webp",
       name: "Auto",
       description: "Conduce con la tranquilidad de estar siempre protegido.",
       detail:
@@ -127,7 +127,7 @@ export const SOLUTIONS = {
     {
       id: "universidad",
       icon: "graduation",
-      image: "/soluciones/universidad.jpg",
+      image: "/soluciones/universidad.webp",
       name: "Universidad",
       description: "Asegura el futuro académico de quienes más quieres.",
       detail:
@@ -136,7 +136,7 @@ export const SOLUTIONS = {
     {
       id: "hogar",
       icon: "home",
-      image: "/soluciones/hogar.jpg",
+      image: "/soluciones/hogar.webp",
       name: "Hogar",
       description: "Tu patrimonio también merece seguridad.",
       detail:
@@ -145,7 +145,7 @@ export const SOLUTIONS = {
     {
       id: "ahorro-retiro",
       icon: "savings",
-      image: "/soluciones/ahorro.jpg",
+      image: "/soluciones/ahorro.webp",
       name: "Ahorro",
       description: "Construye hoy el futuro que sueñas.",
       detail:
@@ -154,7 +154,7 @@ export const SOLUTIONS = {
     {
       id: "mascotas",
       icon: "pet",
-      image: "/soluciones/mascotas.jpg",
+      image: "/soluciones/mascotas.webp",
       name: "Mascotas",
       description: "Cuida a quien te acompaña de forma incondicional.",
       detail:
@@ -163,7 +163,7 @@ export const SOLUTIONS = {
     {
       id: "empleados",
       icon: "team",
-      image: "/soluciones/empleados.jpg",
+      image: "/soluciones/empleados.webp",
       name: "Empleados",
       description: "Beneficios y protección para tu equipo de trabajo.",
       detail:
@@ -172,7 +172,7 @@ export const SOLUTIONS = {
     {
       id: "negocios",
       icon: "business",
-      image: "/soluciones/negocios.jpg",
+      image: "/soluciones/negocios.webp",
       name: "Negocios",
       description: "Protege el patrimonio y la continuidad de tu empresa.",
       detail:

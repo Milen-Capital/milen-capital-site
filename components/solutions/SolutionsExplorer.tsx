@@ -125,6 +125,7 @@ export default function SolutionsExplorer() {
           alt={active.name}
           fill
           sizes="(min-width: 1024px) 700px, 100vw"
+          unoptimized
           className="object-cover"
           fallback={
             <div className="flex h-full w-full items-center justify-center bg-cream font-display text-xl text-navy/30">
