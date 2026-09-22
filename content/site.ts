@@ -418,7 +418,7 @@ export const ABOUT_PAGE = {
     title: "Protegemos hoy, construimos el legado de mañana",
   },
   story: {
-    photo: "/team/edith-cutout.png",
+    photo: "/team/edith-out2.png",
     eyebrow: "Quiénes somos",
     title: "Asesoría cercana, con el respaldo de GNP",
     paragraphs: [
@@ -441,7 +441,7 @@ export const ABOUT_PAGE = {
         id: "integridad",
         icon: "advice",
         name: "Integridad",
-        description: "Actuamos con honestidad y transparencia en cada decisión.",
+        description: "Actuamos con transparencia en cada decisión.",
       },
       {
         id: "confianza",
