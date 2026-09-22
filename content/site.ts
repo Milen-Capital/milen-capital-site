@@ -428,12 +428,12 @@ export const ABOUT_PAGE = {
   },
   mission: {
     title: "Misión",
-    text: "Brindar asesoría personalizada en seguros y protección patrimonial, ayudando a cada familia y negocio a proteger lo que más importa con decisiones claras e informadas.",
+    text: "Ayudar a empresarios, profesionales y familias a proteger, fortalecer y transferir su patrimonio de manera estratégica para construir un legado duradero.",
     image: "/about/mision.jpg",
   },
   vision: {
     title: "Visión",
-    text: "Ser el despacho de referencia en asesoría patrimonial de la región, reconocido por la confianza, la cercanía y el respaldo que brindamos a quienes nos eligen.",
+    text: "Ser la firma patrimonial de referencia para quienes buscan trascender financieramente y generar impacto positivo en futuras generaciones.",
     image: "/about/valores.jpg",
   },
   values: {
