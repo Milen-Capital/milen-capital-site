@@ -15,66 +15,65 @@ function ColumnTitle({ children }: { children: React.ReactNode }) {
 
 export default function MissionVisionValues() {
   return (
-    <section className="bg-navy py-14 md:py-16">
-      <div className="container-page grid gap-12 md:grid-cols-3 md:gap-10">
-        <div>
-          <ColumnTitle>{ABOUT_PAGE.mission.title}</ColumnTitle>
-          <p className="mt-4 leading-relaxed text-cream/70">{ABOUT_PAGE.mission.text}</p>
-          <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md shadow-black/20">
-            <FallbackImage
-              src={ABOUT_PAGE.mission.image}
-              alt={ABOUT_PAGE.mission.title}
-              fill
-              sizes="(min-width: 768px) 340px, 90vw"
-              className="object-cover"
-              fallback={
-                <div className="flex h-full w-full items-center justify-center bg-navy-700 font-display text-xl text-cream/30">
-                  {ABOUT_PAGE.mission.title}
-                </div>
-              }
-            />
-          </div>
-        </div>
-
-        <div className="md:border-l md:border-cream/15 md:pl-10">
-          <ColumnTitle>{ABOUT_PAGE.vision.title}</ColumnTitle>
-          <p className="mt-4 leading-relaxed text-cream/70">{ABOUT_PAGE.vision.text}</p>
-          <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md shadow-black/20">
-            <FallbackImage
-              src={ABOUT_PAGE.vision.image}
-              alt={ABOUT_PAGE.vision.title}
-              fill
-              sizes="(min-width: 768px) 340px, 90vw"
-              className="object-cover"
-              fallback={
-                <div className="flex h-full w-full items-center justify-center bg-navy-700 font-display text-xl text-cream/30">
-                  {ABOUT_PAGE.vision.title}
-                </div>
-              }
-            />
-          </div>
-        </div>
-
-        <div className="md:border-l md:border-cream/15 md:pl-10">
-          <ColumnTitle>{ABOUT_PAGE.values.title}</ColumnTitle>
-          <div className="mt-5 space-y-4">
-            {ABOUT_PAGE.values.items.map((value) => {
-              const Icon = VALUE_ICONS[value.icon];
-              return (
-                <div key={value.id} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cream/10 text-gold-light">
-                    {Icon ? <Icon className="h-4 w-4" /> : null}
-                  </span>
-                  <div>
-                    <p className="font-semibold text-cream">{value.name}</p>
-                    <p className="text-sm leading-relaxed text-cream/70">{value.description}</p>
+    <>
+      <section className="relative bg-navy pb-24 pt-14 md:pb-28 md:pt-16">
+        <div className="container-page grid gap-12 md:grid-cols-2 md:gap-14">
+          <div>
+            <ColumnTitle>{ABOUT_PAGE.mission.title}</ColumnTitle>
+            <p className="mt-4 leading-relaxed text-cream/70">{ABOUT_PAGE.mission.text}</p>
+            <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md shadow-black/20">
+              <FallbackImage
+                src={ABOUT_PAGE.mission.image}
+                alt={ABOUT_PAGE.mission.title}
+                fill
+                sizes="(min-width: 768px) 480px, 90vw"
+                className="object-cover"
+                fallback={
+                  <div className="flex h-full w-full items-center justify-center bg-navy-700 font-display text-xl text-cream/30">
+                    {ABOUT_PAGE.mission.title}
                   </div>
-                </div>
-              );
-            })}
+                }
+              />
+            </div>
           </div>
+
+          <div className="md:border-l md:border-cream/15 md:pl-14">
+            <ColumnTitle>{ABOUT_PAGE.vision.title}</ColumnTitle>
+            <p className="mt-4 leading-relaxed text-cream/70">{ABOUT_PAGE.vision.text}</p>
+            <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-md shadow-black/20">
+              <FallbackImage
+                src={ABOUT_PAGE.vision.image}
+                alt={ABOUT_PAGE.vision.title}
+                fill
+                sizes="(min-width: 768px) 480px, 90vw"
+                className="object-cover"
+                fallback={
+                  <div className="flex h-full w-full items-center justify-center bg-navy-700 font-display text-xl text-cream/30">
+                    {ABOUT_PAGE.vision.title}
+                  </div>
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="container-page relative z-10 -mt-16 md:-mt-20">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 rounded-2xl bg-cream p-6 shadow-lg shadow-navy/20 sm:grid-cols-3 md:gap-x-6 md:gap-y-10 md:p-10">
+          {ABOUT_PAGE.values.items.map((value) => {
+            const Icon = VALUE_ICONS[value.icon];
+            return (
+              <div key={value.id} className="flex flex-col items-center gap-2 text-center">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy/10 text-navy">
+                  {Icon ? <Icon /> : null}
+                </span>
+                <p className="font-semibold text-navy">{value.name}</p>
+                <p className="text-sm leading-relaxed text-muted">{value.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </section>
+    </>
   );
 }
