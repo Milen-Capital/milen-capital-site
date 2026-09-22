@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { SOLUTIONS } from "@/content/site";
 import { SOLUTION_ICONS, StarIcon } from "@/components/icons";
@@ -73,6 +73,13 @@ export default function SolutionsTeaser() {
   const [listOpen, setListOpen] = useState(false);
   const active = SOLUTIONS.items.find((item) => item.id === activeId) ?? SOLUTIONS.items[0];
   const otherItems = SOLUTIONS.items.filter((item) => item.id !== activeId);
+  const mobileDetailRef = useRef<HTMLDivElement>(null);
+
+  const handleSelect = (id: string) => {
+    setActiveId(id);
+    setListOpen(false);
+    mobileDetailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <section className="relative overflow-hidden bg-cream py-20 md:py-24">
@@ -98,7 +105,9 @@ export default function SolutionsTeaser() {
 
         {/* Mobile / tablet: tarjeta activa + acordeón "Más soluciones" */}
         <div className="mt-10 lg:hidden">
-          <SolutionDetailCard item={active} />
+          <div key={activeId} ref={mobileDetailRef} className="scroll-mt-24">
+            <SolutionDetailCard item={active} />
+          </div>
 
           <button
             type="button"
@@ -121,10 +130,7 @@ export default function SolutionsTeaser() {
                   <button
                     key={item.id}
                     type="button"
-                    onClick={() => {
-                      setActiveId(item.id);
-                      setListOpen(false);
-                    }}
+                    onClick={() => handleSelect(item.id)}
                     className="flex items-center justify-between gap-3 rounded-xl bg-white/70 px-4 py-3 text-left transition hover:bg-white"
                   >
                     <span className="flex items-center gap-3">
@@ -153,7 +159,7 @@ export default function SolutionsTeaser() {
                 <button
                   key={item.id}
                   type="button"
-                  onClick={() => setActiveId(item.id)}
+                  onClick={() => handleSelect(item.id)}
                   aria-pressed={isActive}
                   className={`flex items-center justify-between gap-3 rounded-xl border-l-4 px-4 py-3 text-left transition ${
                     isActive
