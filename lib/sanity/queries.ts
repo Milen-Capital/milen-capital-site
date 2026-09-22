@@ -21,7 +21,10 @@ const POST_PROJECTION = `{
   "slug": slug.current,
   excerpt,
   "categoryId": category,
-  "image": coverImage.asset->url,
+  "image": select(
+    defined(coverImage.asset) => coverImage.asset->url + "?w=1600&fit=max",
+    null
+  ),
   "date": publishedAt,
   readTime,
   author,
