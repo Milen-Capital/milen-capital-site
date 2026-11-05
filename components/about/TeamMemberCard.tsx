@@ -28,6 +28,7 @@ export default function TeamMemberCard({
           alt={member.name}
           fill
           sizes="200px"
+          unoptimized
           className="object-contain object-bottom transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_22px_rgba(189,156,106,0.65)]"
           fallback={
             <div

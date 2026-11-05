@@ -20,7 +20,7 @@ export const CONTACT = {
   whatsappDisplay: "442 598 2821",
   whatsappHref: "https://wa.me/524425982821",
   email: "consultoria@milencapital.com",
-  regions: ["Querétaro", "Guanajuato", "San Luis Potosí", "Aguascalientes", "Michoacán"],
+  regions: ["Querétaro", "Guanajuato", "Aguascalientes", "Michoacán"],
   regionsNote: "Asesoría presencial y en línea.",
 };
 
@@ -40,14 +40,6 @@ export const COVERAGE_MAP = [
     lat: 21.019,
     lon: -101.2574,
     address: "Av. Juárez 45, Centro, Guanajuato, Gto. C.P. 36000",
-  },
-  {
-    id: "slp",
-    state: "San Luis Potosí",
-    city: "San Luis Potosí",
-    lat: 22.1565,
-    lon: -100.9855,
-    address: "Av. Venustiano Carranza 210, Centro, San Luis Potosí, S.L.P. C.P. 78000",
   },
   {
     id: "aguascalientes",
@@ -81,13 +73,37 @@ export const HERO = {
     "Blindaje patrimonial, seguros GNP y asesoría personalizada para proteger lo que más importa y construir un legado duradero para tu familia.",
   ctaPrimary: { label: "Cotiza tu seguro", href: "/soluciones" },
   backedBy: "Con el respaldo de GNP Seguros",
-  videoUrl: "https://www.youtube.com/embed/1JBYTq5mCYY",
+  videoUrl: "https://www.youtube.com/embed/ohFZekvbQUQ",
   videoTitle: "Conoce Milen Capital",
   badges: [
     { id: "advice", label: "Asesoría personalizada" },
     { id: "support", label: "Acompañamiento en todo el proceso" },
     { id: "trust", label: "Confianza y respaldo GNP" },
     { id: "experience", label: "29 años de experiencia en ventas" },
+  ],
+} as const;
+
+// Contenido de ejemplo por si Sanity no responde o no tiene promociones
+// activas todavía. Edith puede crear más promociones (o editar esta) desde
+// el Sanity Studio, sin tocar código.
+export const PROMOTIONS = {
+  eyebrow: "Promociones",
+  title: "Promociones Exclusivas",
+  subtitle: "Aprovecha estos beneficios por tiempo limitado.",
+  defaultCtaLabel: "Cotizar por WhatsApp",
+  defaultWhatsappMessage: "Hola, quiero más información sobre esta promoción.",
+  items: [
+    {
+      id: "cobertura-mujer",
+      title: "Extendemos Cobertura Mujer",
+      description:
+        "Sin costo adicional al contratar planes tradicionales. Protege a las mujeres de tu familia ante cualquier imprevisto, hasta el 30 de noviembre de 2026.",
+      image: "/promotions/cobertura-mujer.webp",
+      // La etiqueta "Vida" ya viene dibujada en la propia imagen, no se repite aquí.
+      badge: undefined,
+      whatsappMessage:
+        "Hola, quiero más información sobre la promoción de Cobertura Mujer sin costo.",
+    },
   ],
 } as const;
 
@@ -347,7 +363,7 @@ export const ABOUT_TEASER = {
   // Foto de cuerpo/medio cuerpo con fondo transparente (PNG), para el
   // panel grande de la sección. La foto de perfil normal vive en
   // TEAM.members (edith.photo).
-  photoCutout: "/team/edith-cutout.png",
+  photoCutout: "/team/edith-cutout.webp",
   role: "Agente autorizada GNP",
   text: "Soy Edith Aguilar, agente autorizada GNP, y mi compromiso es brindarte asesoría cercana, clara y personalizada.",
   quote:
@@ -379,34 +395,24 @@ export const TEAM = {
       photoCutout: ABOUT_TEASER.photoCutout,
     },
     {
-      id: "miguel-iriarte",
-      name: "Miguel Iriarte",
-      role: "Cargo por confirmar",
-      initials: "MI",
+      id: "estefania",
+      name: "Estefania",
+      role: "Asesor Patrimonial Automotriz",
+      initials: "E",
       lead: false,
-      roleConfirmed: false,
-      photo: "/team/Miguel-iriarte.jpeg",
-      photoCutout: "/team/miguel-cutout.png",
-    },
-    {
-      id: "estefania-iriarte",
-      name: "Estefania Iriarte",
-      role: "Cargo por confirmar",
-      initials: "EI",
-      lead: false,
-      roleConfirmed: false,
+      roleConfirmed: true,
       photo: "/team/Estefania.jpeg",
-      photoCutout: "/team/estefania-cutout.png",
+      photoCutout: "/team/estefania-cutout.webp",
     },
     {
       id: "luis-miguel",
       name: "Luis Miguel",
-      role: "Cargo por confirmar",
+      role: "Asesor Patrimonial Automotriz",
       initials: "LM",
       lead: false,
-      roleConfirmed: false,
+      roleConfirmed: true,
       photo: "/team/Mike.jpeg",
-      photoCutout: "/team/luis-miguel-cutout.png",
+      photoCutout: "/team/luis-miguel-cutout.webp",
     },
   ],
 } as const;
@@ -418,7 +424,7 @@ export const ABOUT_PAGE = {
     title: "Protegemos hoy, construimos el legado de mañana",
   },
   story: {
-    photo: "/team/edith-out2.png",
+    photo: "/team/edith-out2.webp",
     eyebrow: "Quiénes somos",
     title: "Asesoría cercana, con el respaldo de GNP",
     paragraphs: [

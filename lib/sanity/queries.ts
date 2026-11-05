@@ -51,4 +51,39 @@ export async function fetchPostBySlug(slug: string): Promise<SanityPost | null> 
   }
 }
 
+export type SanityPromotion = {
+  _id: string;
+  title: string;
+  description: string;
+  image: string | null;
+  badge: string | null;
+  ctaLabel: string | null;
+  whatsappMessage: string | null;
+};
+
+const PROMOTION_PROJECTION = `{
+  _id,
+  title,
+  description,
+  "image": select(
+    defined(image.asset) => image.asset->url + "?w=900&fit=max",
+    null
+  ),
+  badge,
+  ctaLabel,
+  whatsappMessage
+}`;
+
+export async function fetchPromotions(): Promise<SanityPromotion[]> {
+  if (!isSanityConfigured) return [];
+  try {
+    return await sanityClient.fetch(
+      `*[_type == "promotion" && active == true] | order(order asc) ${PROMOTION_PROJECTION}`,
+    );
+  } catch (error) {
+    console.error("Error al consultar promociones en Sanity, se usa el contenido de ejemplo:", error);
+    return [];
+  }
+}
+
 export { urlForImage };

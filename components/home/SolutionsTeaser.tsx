@@ -35,7 +35,6 @@ function SolutionDetailCard({ item, fill = false }: { item: SolutionItem; fill?:
     >
       <div className={`relative aspect-[4/3] md:aspect-auto ${fill ? "lg:h-full" : ""}`}>
         <FallbackImage
-          key={item.id}
           src={item.image}
           alt={item.name}
           sizes="(min-width: 768px) 50vw, 100vw"
@@ -83,7 +82,7 @@ export default function SolutionsTeaser() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-cream py-20 md:py-24">
+    <section className="relative overflow-hidden bg-cream pb-20 pt-6 md:pb-24 md:pt-8">
       <svg
         className="pointer-events-none absolute -right-8 -top-8 hidden h-48 w-48 text-gold/40 md:block"
         viewBox="0 0 200 200"
@@ -106,7 +105,7 @@ export default function SolutionsTeaser() {
 
         {/* Mobile / tablet: tarjeta activa + acordeón "Más soluciones" */}
         <div className="mt-10 lg:hidden">
-          <div key={activeId} ref={mobileDetailRef} className="scroll-mt-24">
+          <div ref={mobileDetailRef} className="scroll-mt-24">
             <SolutionDetailCard item={active} />
           </div>
 
