@@ -99,7 +99,8 @@ export const PROMOTIONS = {
       description:
         "Sin costo adicional al contratar planes tradicionales. Protege a las mujeres de tu familia ante cualquier imprevisto, hasta el 30 de noviembre de 2026.",
       image: "/promotions/cobertura-mujer.webp",
-      badge: "Vida",
+      // La etiqueta "Vida" ya viene dibujada en la propia imagen, no se repite aquí.
+      badge: undefined,
       whatsappMessage:
         "Hola, quiero más información sobre la promoción de Cobertura Mujer sin costo.",
     },
