@@ -99,7 +99,7 @@ export default function PromotionsSection() {
             const whatsappUrl = `${CONTACT.whatsappHref}?text=${encodeURIComponent(promo.whatsappMessage)}`;
             return (
               <div key={promo.id} className="w-full shrink-0 snap-center">
-                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg shadow-navy/15">
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg shadow-navy/15 md:mx-auto md:max-w-3xl">
                   <FallbackImage
                     src={promo.image}
                     alt={promo.title}
