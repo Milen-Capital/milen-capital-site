@@ -54,7 +54,7 @@ export default function PromotionsSection() {
   if (promotions.length === 0) return null;
 
   return (
-    <section className="bg-cream pb-8 pt-16 md:pb-10 md:pt-20">
+    <section className="bg-cream pb-2 pt-16 md:pb-3 md:pt-20">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
