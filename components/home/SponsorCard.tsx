@@ -26,6 +26,7 @@ export default function SponsorCard({
           width={260}
           height={260}
           quality={90}
+          unoptimized
           className="h-full w-full object-contain drop-shadow-lg"
           onLoad={() => setLogoLoaded(true)}
           fallback={

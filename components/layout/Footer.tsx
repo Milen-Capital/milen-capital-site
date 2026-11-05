@@ -75,6 +75,7 @@ export default function Footer() {
               width={200}
               height={56}
               quality={90}
+              unoptimized
               className="h-10 w-auto object-contain"
               fallback={
                 <div className="flex h-10 items-center gap-2 text-cream/60">

@@ -52,6 +52,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               alt={post.title}
               fill
               sizes="(min-width: 1024px) 768px, 100vw"
+              unoptimized
               className="object-cover"
               fallback={
                 <div className="flex h-full w-full items-center justify-center bg-white text-navy/20">

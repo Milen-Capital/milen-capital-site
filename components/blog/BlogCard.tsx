@@ -20,6 +20,7 @@ export default function BlogCard({ post }: { post: DisplayPost }) {
           alt={post.title}
           fill
           sizes="(min-width: 1024px) 380px, 100vw"
+          unoptimized
           className="object-cover transition duration-300 group-hover:scale-105"
           fallback={
             <div className="flex h-full w-full items-center justify-center text-navy/20">

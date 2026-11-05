@@ -65,6 +65,7 @@ export default function AboutTeaser() {
               alt={ABOUT_TEASER.name}
               fill
               sizes="(min-width: 1024px) 420px, 80vw"
+              unoptimized
               className="relative z-10 object-contain object-bottom"
               fallback={
                 <div className="flex h-full w-full items-center justify-center rounded-full border-2 border-gold/40 bg-navy font-display text-5xl text-gold-light">
