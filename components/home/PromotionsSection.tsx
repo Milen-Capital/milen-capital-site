@@ -99,35 +99,33 @@ export default function PromotionsSection() {
             const whatsappUrl = `${CONTACT.whatsappHref}?text=${encodeURIComponent(promo.whatsappMessage)}`;
             return (
               <div key={promo.id} className="w-full shrink-0 snap-center">
-                <div className="grid overflow-hidden rounded-2xl bg-white shadow-lg shadow-navy/10 md:grid-cols-[360px_1fr] md:items-stretch">
-                  <div className="relative aspect-[900/1543] w-full md:w-[360px]">
-                    <FallbackImage
-                      src={promo.image}
-                      alt={promo.title}
-                      fill
-                      sizes="(min-width: 768px) 360px, 100vw"
-                      className="object-cover"
-                      fallback={
-                        <div className="flex h-full w-full items-center justify-center bg-navy/5 px-6 text-center font-display text-lg text-navy/30">
-                          {promo.title}
-                        </div>
-                      }
-                    />
-                    {promo.badge ? (
-                      <span className="absolute left-4 top-4 rounded-full bg-navy px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cream">
-                        {promo.badge}
-                      </span>
-                    ) : null}
-                  </div>
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg shadow-navy/15">
+                  <FallbackImage
+                    src={promo.image}
+                    alt={promo.title}
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                    fallback={
+                      <div className="flex h-full w-full items-center justify-center bg-navy/5 px-6 text-center font-display text-lg text-navy/30">
+                        {promo.title}
+                      </div>
+                    }
+                  />
 
-                  <div className="flex flex-col justify-center p-8 md:p-10">
-                    <h3 className="font-display text-2xl text-navy md:text-3xl">{promo.title}</h3>
-                    <p className="mt-3 leading-relaxed text-muted">{promo.description}</p>
+                  {promo.badge ? (
+                    <span className="absolute left-5 top-5 rounded-full bg-navy px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cream">
+                      {promo.badge}
+                    </span>
+                  ) : null}
+
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent p-5 pt-16 sm:p-7 sm:pt-24">
+                    <span className="sr-only">{promo.title}</span>
                     <a
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-navy transition hover:bg-gold-dark hover:text-cream"
+                      className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-navy transition hover:bg-gold-dark hover:text-cream"
                     >
                       {promo.ctaLabel}
                       <span aria-hidden="true">→</span>
