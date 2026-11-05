@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { CONTACT, SOLUTIONS, SOLUTIONS_PAGE, SOLUTION_FORMS } from "@/content/site";
 import { SOLUTION_ICONS } from "@/components/icons";
 import FallbackImage from "@/components/FallbackImage";
 import SolutionFormField from "@/components/solutions/SolutionFormField";
+import { preloadImages } from "@/lib/preloadImages";
 
 type SolutionItem = (typeof SOLUTIONS.items)[number];
 
@@ -91,6 +92,10 @@ export default function SolutionsExplorer() {
   const otherItems = SOLUTIONS.items.filter((item) => item.id !== activeId);
   const fields = SOLUTION_FORMS[activeId] ?? [];
   const Icon = SOLUTION_ICONS[active.icon];
+
+  useEffect(() => {
+    preloadImages(SOLUTIONS.items.map((item) => item.image));
+  }, []);
 
   const handleSelect = (id: string) => {
     setActiveId(id);
