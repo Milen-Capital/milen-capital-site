@@ -35,7 +35,6 @@ function SolutionDetailCard({ item, fill = false }: { item: SolutionItem; fill?:
     >
       <div className={`relative aspect-[4/3] md:aspect-auto ${fill ? "lg:h-full" : ""}`}>
         <FallbackImage
-          key={item.id}
           src={item.image}
           alt={item.name}
           sizes="(min-width: 768px) 50vw, 100vw"
@@ -106,7 +105,7 @@ export default function SolutionsTeaser() {
 
         {/* Mobile / tablet: tarjeta activa + acordeón "Más soluciones" */}
         <div className="mt-10 lg:hidden">
-          <div key={activeId} ref={mobileDetailRef} className="scroll-mt-24">
+          <div ref={mobileDetailRef} className="scroll-mt-24">
             <SolutionDetailCard item={active} />
           </div>
 

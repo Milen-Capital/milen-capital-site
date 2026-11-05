@@ -184,7 +184,7 @@ export default function SolutionsExplorer() {
       <div className="container-page">
         {/* Mobile/tablet: card activa + acordeón "Más soluciones" */}
         <div className="lg:hidden">
-          <div key={activeId} ref={mobileDetailRef} className="scroll-mt-24">
+          <div ref={mobileDetailRef} className="scroll-mt-24">
             {detailPanel}
           </div>
 
@@ -246,7 +246,7 @@ export default function SolutionsExplorer() {
             <HelpBox />
           </div>
 
-          <div key={activeId}>{detailPanel}</div>
+          <div>{detailPanel}</div>
         </div>
       </div>
     </section>
