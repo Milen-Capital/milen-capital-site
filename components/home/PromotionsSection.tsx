@@ -98,8 +98,8 @@ export default function PromotionsSection() {
           {promotions.map((promo) => {
             const whatsappUrl = `${CONTACT.whatsappHref}?text=${encodeURIComponent(promo.whatsappMessage)}`;
             return (
-              <div key={promo.id} className="w-full shrink-0 snap-center">
-                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg shadow-navy/15">
+              <div key={promo.id} className="w-full shrink-0 snap-center overflow-hidden rounded-2xl shadow-lg shadow-navy/15">
+                <div className="relative aspect-[16/9] w-full">
                   <FallbackImage
                     src={promo.image}
                     alt={promo.title}
@@ -119,7 +119,8 @@ export default function PromotionsSection() {
                     </span>
                   ) : null}
 
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent p-5 pt-16 sm:p-7 sm:pt-24">
+                  {/* Escritorio/tablet: botón flotando sobre la imagen (hay espacio de sobra) */}
+                  <div className="absolute inset-x-0 bottom-0 hidden items-end justify-between gap-4 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent p-7 pt-24 sm:flex">
                     <span className="sr-only">{promo.title}</span>
                     <a
                       href={whatsappUrl}
@@ -131,6 +132,19 @@ export default function PromotionsSection() {
                       <span aria-hidden="true">→</span>
                     </a>
                   </div>
+                </div>
+
+                {/* Mobile: banner más bajo, el botón queda apretado encima de la imagen, así que va en una franja separada debajo */}
+                <div className="flex justify-center bg-white p-4 sm:hidden">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-navy transition hover:bg-gold-dark hover:text-cream"
+                  >
+                    {promo.ctaLabel}
+                    <span aria-hidden="true">→</span>
+                  </a>
                 </div>
               </div>
             );
