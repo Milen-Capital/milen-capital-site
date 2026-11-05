@@ -105,6 +105,7 @@ export default function PromotionsSection() {
                     alt={promo.title}
                     fill
                     sizes="100vw"
+                    unoptimized
                     className="object-cover"
                     fallback={
                       <div className="flex h-full w-full items-center justify-center bg-navy/5 px-6 text-center font-display text-lg text-navy/30">
