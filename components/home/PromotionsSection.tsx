@@ -98,8 +98,8 @@ export default function PromotionsSection() {
           {promotions.map((promo) => {
             const whatsappUrl = `${CONTACT.whatsappHref}?text=${encodeURIComponent(promo.whatsappMessage)}`;
             return (
-              <div key={promo.id} className="w-full shrink-0 snap-center overflow-hidden rounded-2xl shadow-lg shadow-navy/15">
-                <div className="relative aspect-[16/9] w-full">
+              <div key={promo.id} className="w-full shrink-0 snap-center">
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg shadow-navy/15">
                   <FallbackImage
                     src={promo.image}
                     alt={promo.title}
@@ -134,8 +134,8 @@ export default function PromotionsSection() {
                   </div>
                 </div>
 
-                {/* Mobile: banner más bajo, el botón queda apretado encima de la imagen, así que va en una franja separada debajo */}
-                <div className="flex justify-center bg-white p-4 sm:hidden">
+                {/* Mobile: banner más bajo, el botón queda apretado encima de la imagen, así que va suelto debajo, sin caja */}
+                <div className="mt-4 flex justify-center sm:hidden">
                   <a
                     href={whatsappUrl}
                     target="_blank"
