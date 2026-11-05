@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { SOLUTIONS } from "@/content/site";
 import { SOLUTION_ICONS, StarIcon } from "@/components/icons";
 import FallbackImage from "@/components/FallbackImage";
+import { preloadImages } from "@/lib/preloadImages";
 
 type SolutionItem = (typeof SOLUTIONS.items)[number];
 
@@ -74,6 +75,10 @@ export default function SolutionsTeaser() {
   const active = SOLUTIONS.items.find((item) => item.id === activeId) ?? SOLUTIONS.items[0];
   const otherItems = SOLUTIONS.items.filter((item) => item.id !== activeId);
   const mobileDetailRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    preloadImages(SOLUTIONS.items.map((item) => item.image));
+  }, []);
 
   const handleSelect = (id: string) => {
     setActiveId(id);
