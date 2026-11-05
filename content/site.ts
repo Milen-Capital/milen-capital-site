@@ -363,7 +363,7 @@ export const ABOUT_TEASER = {
   // Foto de cuerpo/medio cuerpo con fondo transparente (PNG), para el
   // panel grande de la sección. La foto de perfil normal vive en
   // TEAM.members (edith.photo).
-  photoCutout: "/team/edith-cutout.png",
+  photoCutout: "/team/edith-cutout.webp",
   role: "Agente autorizada GNP",
   text: "Soy Edith Aguilar, agente autorizada GNP, y mi compromiso es brindarte asesoría cercana, clara y personalizada.",
   quote:
@@ -402,7 +402,7 @@ export const TEAM = {
       lead: false,
       roleConfirmed: true,
       photo: "/team/Estefania.jpeg",
-      photoCutout: "/team/estefania-cutout.png",
+      photoCutout: "/team/estefania-cutout.webp",
     },
     {
       id: "luis-miguel",
@@ -412,7 +412,7 @@ export const TEAM = {
       lead: false,
       roleConfirmed: true,
       photo: "/team/Mike.jpeg",
-      photoCutout: "/team/luis-miguel-cutout.png",
+      photoCutout: "/team/luis-miguel-cutout.webp",
     },
   ],
 } as const;
@@ -424,7 +424,7 @@ export const ABOUT_PAGE = {
     title: "Protegemos hoy, construimos el legado de mañana",
   },
   story: {
-    photo: "/team/edith-out2.png",
+    photo: "/team/edith-out2.webp",
     eyebrow: "Quiénes somos",
     title: "Asesoría cercana, con el respaldo de GNP",
     paragraphs: [
