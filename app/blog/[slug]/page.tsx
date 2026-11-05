@@ -7,6 +7,11 @@ import { formatDate } from "@/lib/formatDate";
 import { TOPIC_ICONS } from "@/components/icons";
 import FallbackImage from "@/components/FallbackImage";
 
+// Misma idea que en app/blog/page.tsx: se guarda una copia lista del
+// post y se refresca sola cada 60 segundos, en vez de consultar Sanity
+// en cada visita.
+export const revalidate = 60;
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
@@ -52,6 +57,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               alt={post.title}
               fill
               sizes="(min-width: 1024px) 768px, 100vw"
+              unoptimized
               className="object-cover"
               fallback={
                 <div className="flex h-full w-full items-center justify-center bg-white text-navy/20">
